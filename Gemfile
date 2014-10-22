@@ -70,9 +70,9 @@ gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 #  gem 'refinerycms-search', '~> 2.1.0'
 #  gem 'refinerycms-page-images', '~> 2.1.0'
 
-gem 'refinerycms-courses', :path => 'vendor/extensions'
+# gem 'refinerycms-courses', :path => 'vendor/extensions'
 gem 'refinerycms-newsarticles', :path => 'vendor/extensions'
-gem 'refinerycms-faqs', :path => 'vendor/extensions'
+# gem 'refinerycms-faqs', :path => 'vendor/extensions'
 
 gem 'blueimp-gallery' # for video and image galleries
 # gem 'will_paginate-bootstrap' # integrates will paginate and twitter bootstrap
