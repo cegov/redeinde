@@ -1,0 +1,34 @@
+<div id="home_news" class="row-fluid">
+	<div id="home_news_highlight" class="span8">
+		<div class="colored-box">		
+			<h4>Notícias</h4>	
+		</div>				
+		<div id="home_news_box">
+			<% if !@highlight.blank? %>
+				<div id="news_highlight">					
+					<div id="home_highlight_image_box">
+						<% if !@highlight.photo_id.blank? %>									
+							<%= link_to refinery.newsarticles_newsarticle_path(@highlight) do %>													  	
+								<%= image_fu @highlight.photo, "700x700" %>
+							<% end %>				  						
+	  					<% end %>	  					
+	  					<h2 class="news-headline"><%= @highlight.headline %></h2> 	
+	  					<% if !@highlight.lead.blank? %>			  	
+	  						<h5 class="news-highlight"><%= @highlight.lead %></h5>
+	  					<% end %>						
+					</div>
+				</div>
+			<% end %>		
+		</div>
+	</div>
+	<div id="home_news_sidebar" class="span4">
+		<div id="home_news_interaction">
+			<%= link_to('#', title: 'Wiki', class: 'interaction_link') do %>
+				<%= image_tag "wiki.png", alt: "Wiki icon", class: "interaction_img" %>
+			<% end %>
+			<%= link_to('#', title: 'Fórum', class: 'interaction_link') do %>
+				<%= image_tag "forum.png", alt: "Forum icon", class: "interaction_img" %>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,36 @@
+zh-CN:
+  refinery:
+    plugins:
+      courses:
+        title: Courses
+    courses:
+      admin:
+        courses:
+          actions:
+            create_new: 建立新的 Course
+            reorder: 对 Courses 重新排序
+            reorder_done: 对 Courses 的重新排序结束
+          records:
+            title: Courses
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Courses yet. Click "Add New Course" to add your first course.
+            no_items_yet: 目前没有 Courses . 点击 "Add New Course" 创建一个course.
+          course:
+            view_live_html: 查看 course 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 course
+            delete: 永久删除 course
+      courses:
+        show:
+          other: 其他 Courses
+  activerecord:
+    attributes:
+      'refinery/courses/course':
+        name: Name
+        user_id: User
+        teacher_name: Teacher Name
+        is_active: Is Active
+        description: Description
+        duration: Duration
+        classes_start_on: Classes Start On
+        classes_end_on: Classes End On

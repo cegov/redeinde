@@ -1,0 +1,26 @@
+<%= 
+	# render_content_page(@page, {
+      # :hide_sections => local_assigns[:hide_sections],
+      # :can_use_fallback => !local_assigns[:show_empty_sections] && !local_assigns[:remove_automatic_sections]
+    # }) 
+%>
+<div class="not-so-fluid">
+	<div class="container-fluid">
+		<div class="row-fluid">	
+			 
+			<div id="sidebar" class="span3 sidebar-nav">			
+				
+				<%= render '/refinery/sidebar', courses: @courses -%>				
+				<% 
+					# raw @page.content_for(:side_body) # ficará sempre igual. por isso está comentado 
+				%>				
+			</div>
+						
+			<div class="span9">				
+				<%=raw @page.content_for(:body) %>	
+				<%= yield :body %>
+			</div>
+		</div>
+	</div>
+</div>
+<%= render '/refinery/draft_page_message' unless @page.try(:live?) -%>

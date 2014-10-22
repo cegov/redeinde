@@ -1,0 +1,34 @@
+tr:
+  refinery:
+    plugins:
+      courses:
+        title: Courses
+    courses:
+      admin:
+        courses:
+          actions:
+            create_new: Yeni Ekle Course
+            reorder: Tekrar sirala Courses
+            reorder_done: Tekrar siralama tamamlandiCourses
+          records:
+            title: Courses
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Courses yok henuz.  Tikla "Yeni Ekle Course" eklemek senin ilk course.
+          course:
+            view_live_html: Bunu canlu course goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle course
+            delete: Bunu Sil course sonsuza dek
+      courses:
+        show:
+          other: Diger Courses
+  activerecord:
+    attributes:
+      'refinery/courses/course':
+        name: Name
+        user_id: User
+        teacher_name: Teacher Name
+        is_active: Is Active
+        description: Description
+        duration: Duration
+        classes_start_on: Classes Start On
+        classes_end_on: Classes End On

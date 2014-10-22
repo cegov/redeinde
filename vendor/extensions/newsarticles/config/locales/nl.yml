@@ -1,0 +1,34 @@
+nl:
+  refinery:
+    plugins:
+      newsarticles:
+        title: Newsarticles
+    newsarticles:
+      admin:
+        newsarticles:
+          actions:
+            create_new: Nieuwe Newsarticle toevoegen
+            reorder: De volgorde van de Newsarticles wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Newsarticle-volgorde
+          records:
+            title: Newsarticles
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Newsarticles. Druk op 'Nieuwe Newsarticle toevoegen' om de eerste toe te voegen.
+          newsarticle:
+            view_live_html: Deze newsarticle op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze newsarticle
+            delete: Deze newsarticle definitief verwijderen
+      newsarticles:
+        show:
+          other: Andere Newsarticles
+  activerecord:
+    attributes:
+      'refinery/newsarticles/newsarticle':
+        refinery_user_id: Refinery User
+        headline: Headline
+        lead: Lead
+        byline: Byline
+        photo: Photo
+        story: Story
+        event_date: Event Date
+        is_published: Is Published

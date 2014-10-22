@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      faqs:
+        title: Faqs
+    faqs:
+      admin:
+        faqs:
+          actions:
+            create_new: 建立新的 Faq
+            reorder: 对 Faqs 重新排序
+            reorder_done: 对 Faqs 的重新排序结束
+          records:
+            title: Faqs
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Faqs yet. Click "Add New Faq" to add your first faq.
+            no_items_yet: 目前没有 Faqs . 点击 "Add New Faq" 创建一个faq.
+          faq:
+            view_live_html: 查看 faq 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 faq
+            delete: 永久删除 faq
+      faqs:
+        show:
+          other: 其他 Faqs
+  activerecord:
+    attributes:
+      'refinery/faqs/faq':
+        refinery_user_id: Refinery User
+        question: Question
+        answer: Answer
+        is_published: Is Published

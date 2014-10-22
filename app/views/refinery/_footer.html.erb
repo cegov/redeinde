@@ -1,0 +1,48 @@
+	<div id="rodape">
+		<div class="not-so-fluid">
+			<div id="footer_links" class="container-fluid">
+				<div class="row-fluid">
+					<div class="span3 footer-link-box">
+						<%= content_tag(:h2, "GERAL") %>
+						<ul>							
+							<li><a href="/sobre">sobre</a></li>
+							<li><a href="/newsarticles">notícias</a></li>
+							<li><a href="/courses">cursos</a></li>							
+						</ul>
+					</div>
+					<div class="span3 footer-link-box">
+						<%= content_tag(:h2, "INSTRUMENTOS") %>
+						<ul>		
+							<li><a href="#">wiki</a></li>
+							<li><a href="#">fórum</a></li>
+						</ul>	
+					</div>		
+					<div class="span3 footer-link-box">						
+						<%= content_tag(:h2, "LINKS") %>
+						<ul>		
+							<li><a href="#">biblioteca digital de des.</a></li>
+							<li><a href="#">app mais brasil</a></li>
+						</ul>	
+					</div>
+					<div class="span3 footer-link-box">						
+						<%= content_tag(:h2, "CURSO EAD EM PLANEJ. ESTRAT.") %>		
+						<ul>							
+							<% @courses.each do |course| %>
+								<li><%= link_to course.name.downcase, refinery.courses_course_path(course) %></li>
+							<% end %>							
+						</ul>				
+					</div>
+				</div>
+			</div>					
+		</div>			
+	</div>
+	<div id="rodape2">
+		<div class="not-so-fluid">
+			<div id="government_links" class="container-fluid">			
+				<%= image_tag 'acesso-a-infornacao.png', :class => "pull-left" %>
+				<%= image_tag 'brasil.png', :class => "pull-right" %>
+			</div>
+		</div>		
+	</div>	
+	
+

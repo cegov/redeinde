@@ -1,0 +1,74 @@
+<% content_for :body do %>
+	<div class="row-fluid">
+		<div class="span8">
+			<div class="">
+				<!--
+				<div class="span3 well sidebar-nav">	
+					<ul class="nav nav-list">			
+						<li class="nav-header">Notícias:</li>
+						<% @newsarticles.each do |newsarticle| %>
+							<li><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>
+						<% end %>  
+					</ul>
+				</div>
+				-->
+				<div class="">
+				  <section class="news_title_and_lead">
+				    <h2 id="news_title"><%=raw @newsarticle.headline %></h2>
+				    <% if !@newsarticle.lead.blank? %>
+						<p class="lead"><%=raw @newsarticle.lead %></p>					  
+				    <% end %>  
+				    <hr />  
+				  </section>
+				  <section class="news_authorship">
+				    <p class="author">por <%= @newsarticle.byline %></p>
+				    <p class="news-published">Publicado <%= l @newsarticle.created_at, format: :short %></p>
+				    <p class="news-modified">Última modificação <%= l @newsarticle.updated_at, format: :short %></p>
+				  </section>
+				  
+				  
+				  <% if !@newsarticle.photo_id.blank? %>			  	
+				  	<%= 
+				  	 	# image_fu @newsarticle.photo, "400x400", class: "image-align-left" 
+				  	 	image_fu @newsarticle.photo, "460x460"
+				  	%>
+				  <% end %> 
+				  <section>    
+				    <p>
+				      <%=raw @newsarticle.story %>
+				    </p>
+				  </section>
+				  <% if !@newsarticle.event_date.blank? %>
+					  <section>
+					    <h4>Data</h4>
+					    <p>
+					      <%=raw @newsarticle.event_date.strftime("%d/%m/%Y") %>
+					    </p>
+					  </section>
+				  <% end %>  
+				</div>
+			</div>
+		</div>
+		<div id="home_news_sidebar" class="span4">
+			<%= render 'refinery/pages/home_news_sidebar' %>
+			<div id="last_news_box">
+				<h2 class="box-title">ÚLTIMAS NOTÍCIAS</h2>
+				<ul>
+					<% @lastarticles.each do |newsarticle| %>				
+						<li class="box">
+							<%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %>
+						</li>
+					<% end %>
+					<li class="box-last">
+						<%= link_to refinery.newsarticles_newsarticles_url do %>
+							<%= "Acesse lista de Notícias".upcase %> <%= image_tag 'blue_go.png', class: "go-btn" %>
+						<% end %>
+						
+					</li>	
+				</ul>					
+				
+			</div>			
+		</div>	
+	</div>
+<% end %>
+<%= render '/refinery/content_page' %>

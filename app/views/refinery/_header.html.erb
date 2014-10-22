@@ -1,0 +1,70 @@
+<% 
+	#Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html 
+%>
+<div id="barra-brasil" style="background:#7F7F7F; height: 20px; padding:0 0 0 10px;display:block;"> 
+	<ul id="menu-barra-temp" style="list-style:none;">
+		<li style="display:inline; float:left;padding-right:10px; margin-right:10px; border-right:1px solid #EDEDED"><a href="http://brasil.gov.br" style="font-family:sans,sans-serif; text-decoration:none; color:white;">Portal do Governo Brasileiro</a></li> 
+		<li><a style="font-family:sans,sans-serif; text-decoration:none; color:white;" href="http://epwg.governoeletronico.gov.br/barra/atualize.html">Atualize sua Barra de Governo</a></li>
+	</ul>
+</div>
+<div id="cabecalho" class="not-so-fluid">
+	<div id="accessibility_menu" class="container-fluid">
+		<div class="row-fluid">
+			<div id="links_to_content">
+				<ul class="inline pull-left">
+					<a href="#page" accesskey="1">Ir para o conteúdo <span>1</span></a> |  
+					<a href="#menu_lateral" accesskey="2">Ir para o menu <span>2</span></a> |  
+					<a href="#busca" accesskey="3">Ir para a busca <span>3</span></a> | 
+					<a href="#rodape" accesskey="4">Ir para o rodapé <span>4</span></a>
+				</ul>
+			</div>			
+			<div id="accessibility_actions">
+				<ul class="inline pull-right">
+					<% accessibility_page = Refinery::Page.find_by_slug('acessibilidade') %>			  
+					<%= link_to accessibility_page.title.upcase, refinery.url_for(accessibility_page), :id => "accessibility-tgt" if !accessibility_page.blank? %> |
+					<a href="#" id="high-contrast-tgt">ALTO CONTRASTE</a> | 
+					<a href="#">MAPA DO SITE</a>
+				</ul>
+			</div>
+		</div>
+	</div>	
+	<div id="logo_bar" class="container-fluid">
+		<div class="row-fluid">
+			<div id="logo" class="span6">				
+				<%= link_to(refinery.root_path, title: 'Início') do %>
+					<%= image_tag "logo.png", alt: "Logo" %>
+				<% end %>				
+			</div>
+			<div id="busca_e_social" class="span6">
+				<div class="vertical-aligned">
+					<div id="busca">
+						<form class="form-search pull-right">
+						    <div class="input-append">
+						        <input type="text" class="search-query">
+						        <button type="submit" class="btn"><%= glypho('search') %></button>
+						    </div>				    
+						</form>
+					</div>					
+					<div id="social">
+						<div id="social_links" class="pull-right">
+							<a href="#"><%= glypho("facebook-sign") %></a>
+							<a href="#"><%= glypho("twitter-sign") %></a>	
+							<a href="#"><%= glypho("youtube-sign") %></a>		
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+	<div id="nav_services" class="navbar navbar-fluid-top">				
+		<div class="navbar-inner">
+			<div class="not-so-fluid">	
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>				
+					<%= menu_header.to_html %>
+				</div>
+			</div>
+		</div>
+	</div>
+

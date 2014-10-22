@@ -1,0 +1,558 @@
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+// @fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+// @fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+// @fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+// @fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+// @fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+@import "colors";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+@import "my_mixins";
+
+/*******************************************************************/
+
+@site-max-width: 980px;
+
+
+/*** TYPOGRAPHY ****************************************************/
+@font-size-small: 10px;
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700,800");
+ 
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body p {
+  font-style: normal;
+  font-weight: 400; /* You specify the number you see next to the fonts to change from light to bold ie you would put 700 etc. etc. */
+  line-height: 150%;
+  font-size: 15px;  
+}  
+
+h1, h2, h3, h4, h5, h6{
+  line-height: 110%;
+}
+
+/*** ALL-PURPOSE *************************************************/
+
+// This class is used to define how elements will look in high contrast mode
+// to define the intended behavior or add new page elements that should behave like that, 
+// do so in the file high_contrast.js 
+.high-contrast {
+  background-image: none !important;    
+  background-color: #000 !important;  
+  color: #fff !important;
+  div#nav_services.navbar div.navbar-inner {
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+  }
+  a {
+    text-decoration:none;
+    &:link {
+      color: @white !important;
+      background-color: @black !important;
+    }      /* unvisited link */
+    &:visited {
+      color: @white !important;
+      background-color: @black !important;
+    }  /* visited link */  
+    &:hover {
+      color:darken(@white, 15%) !important;
+      background-color: @black !important;
+    }  /* mouse over link */
+    &:active {
+      color:darken(@white, 15%) !important;
+      background-color: @black !important;
+    }  /* selected link */
+  }
+  footer {
+    border-top: thin solid @white;
+  }
+}
+
+.add-margins {
+  padding: 20px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.add-vertical-space {
+  margin: 20px 0px 20px 0px;
+}
+
+.add-bottom-space {
+  margin-bottom: 25px;
+}
+
+.padded {
+  padding: 10px 20px 10px 20px; 
+}
+
+img.center {   display: block;   margin-left: auto;   margin-right: auto; }
+div.center, nav ul.center { text-align: center; } 
+.vertical-aligned {
+  text-align: center;
+  //background: #c0c0c0;
+  //border: #a0a0a0 solid 1px;
+  // margin: 20px;
+}
+ 
+.vertical-aligned:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+  //margin-right: -0.25em; /* Adjusts for spacing */
+    
+  /* For visualization 
+  background: #808080; width: 5px;
+  */
+ }
+ 
+ul {
+  margin: 0px;
+  list-style-type: none;  
+  li a { 
+    text-decoration:none;
+    &:link { color: @primary1; }
+    &:visited { color: @primary1; }   /* visited link */  
+    &:hover { color:lighten(@primary1, 20%); } 
+    &:active { color:lighten(@primary1, 20%); }
+  }   
+}
+
+a { 
+    text-decoration:none;
+    &:link { color: @primary1; }
+    &:visited { color: @primary1; }   /* visited link */  
+    &:hover { color:lighten(@primary1, 20%); } 
+    &:active { color:lighten(@primary1, 20%); }
+}
+
+.not-so-fluid {
+  max-width: @site-max-width;
+  margin: auto;
+  padding: 0px 20px;  
+}
+
+ul#newsarticles, ul#courses, ul#home_recent_news {
+  margin: 0px;
+  li.home_recent_news_box {
+    background-color: @box-bg-color;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 5px;
+    .border-radius( 5px );    
+  }
+}
+ul#home_recent_news li {  
+  padding: 10px 20px 25px 10px;
+  span.date-small {
+    color: darken(@box-bg-color, 25%);
+  }
+}
+
+.colored-box {
+  border-top: 3px solid @primary1;
+  min-height: 40px;
+  background-color: @box-bg-color;
+  h4 {    
+    color: darken(@primary1, 2%);
+    padding-left: 9px;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+}
+// for date in newsarticles list on home page 
+
+
+div#newsarticles div.newsarticle_box {
+  div.newsarticle_date {
+    height: 20px;
+    padding: 0px;
+    margin-bottom:10px;
+    text-align: middle;    
+    .date-small {
+      font-style: normal;
+      font-size: 12px;
+      padding-left: 5px;
+      position: relative;
+      top: 1px;      
+    }
+    img.cal-icon {
+      height: 14px;
+      width: 14px;
+    }
+  }
+}
+
+
+
+/*** HEADER ********************************************************/
+
+
+header {  
+  color: @white; 
+  background-color: @primary1;
+  #gradient > .vertical(@primary1, @primary2); 
+  margin-bottom: 55px;
+  
+  #logo_portal_name {
+    font-weight: 800;
+    font-style: bold; 
+  }
+  
+  .navbar-inner {
+    background-color: @primary1;
+    // #gradient > .vertical(@primary1, lighten(@primary1, 15%)); 
+    background-image: none;
+    background-repeat: repeat-x;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);   
+    
+    
+  }
+  
+  .navbar .nav > li > a {
+    color: @white;    
+    .text-shadow(@white-blur);
+    padding: 10px 0 10px 25px;
+    &:link {color: @white !important;}      /* unvisited link */
+    &:visited {color: @white !important;}  /* visited link */  
+    &:hover {color:darken(@white, 15%) !important;}  /* mouse over link */
+    &:active {color:darken(@white, 15%) !important;}  /* selected link */
+  } 
+  
+  #logo_portal_name a {
+    text-decoration:none;
+    &:link {color: @white;}      /* unvisited link */
+    &:visited {color: @white;}  /* visited link */  
+    &:hover {color:darken(@white, 15%);}  /* mouse over link */
+    &:active {color:darken(@white, 15%);}  /* selected link */
+  } 
+  #accessibility_menu {
+      padding: 0px 20px 0px 20px;
+      margin-bottom: 15px;
+      a {
+        &:link {color: @white;}      /* unvisited link */
+        &:visited {color: @white;}  /* visited link */  
+        &:hover {color:darken(@white, 15%);}  /* mouse over link */
+        &:active {color:darken(@white, 15%);}  /* selected link */
+      }
+      background-color: none;
+      #links_to_content a {
+        font-size: @font-size-small;             
+      }
+      #accessibility_actions {
+        font-size: @font-size-small;  
+        ul {
+          border-bottom: 1px dotted @white;
+        }      
+      }      
+  }
+  #logo_bar {
+      // padding: 10px 40px 10px 40px;    
+      background-color: none;
+      #logo {
+        h1, h5, h6 {
+          margin: 0px 0px 4px;
+        }
+        #logo_denomination {
+          font-size: 11px;          
+        }
+        #logo_subordination {
+          font-size: 11px;
+        }
+      }
+      #busca_e_social {
+        #busca {
+          width: 100%;
+          height: 30px;
+          margin-bottom: 12px;
+          form {
+            margin-bottom: 0px;
+          }
+        }
+        #social {
+          text-align: right;
+          width: 100%;
+          height: 30px;
+          #social_links {
+            text-align: right;
+            height: 30px;
+            width: 80px;
+            i {
+              color: @white;
+              font-size: 20px;
+              // background-color: @contrast;
+            }
+          }          
+        }
+      }
+  }
+  #nav_services {
+      div.navbar-inner {
+        border-radius: 0px;
+      }
+  }  
+}
+
+#cabecalho {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*** BODY ******************************************************/
+
+html, body {
+  // height: 100%;
+}
+
+body {
+  background-color: @white;
+  color: @dark-gray;
+}
+#page {
+  // padding: 20px;
+  min-height: 500px;
+  h1, h2, h3, h4, h5, h6 {
+    //color: darken(@green, 15%);    
+  }
+  
+}
+@media screen and ( min-height: 916px ) and ( max-height: 1024px ) {
+  #page {
+    min-height: 640px;
+  }
+}
+@media screen and ( min-height: 1025px ) {
+  #page {
+    min-height: 770px;
+  }
+}
+
+/*** SIDEBAR ***************************************************/
+#sidebar section { 
+  margin-bottom: 66px;
+  ul {
+    li {
+      margin-top: 2px;
+      padding-left: 20px;
+      border-bottom: solid 2px lighten(@dark-gray, 60%);
+      line-height: 28px;
+      a {
+        text-decoration:none;
+        &:link {
+          color: @dark-gray !important;          
+        } 
+        &:visited {
+          color: @dark-gray !important;          
+        }  /* visited link */  
+        &:hover {
+          color:darken(@dark-gray, 15%) !important;          
+        }  /* mouse over link */
+        &:active {
+          color:darken(@dark-gray, 15%) !important;          
+        }  /* selected link */
+      }
+    }    
+  }
+}
+
+
+/*** FOOTER ****************************************************/
+
+@footer_height: 112px + 25px;
+
+footer {  
+  #rodape {    
+    margin-top: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 140px;
+    color: @white;
+    background-color: @primary1;
+    #gradient > .vertical(@primary1, @primary2); 
+    
+    #footer_links {
+      padding-top: 10px;      
+      background-color: none;
+      div.footer-link-box {
+        min-height: 100px;        
+        border-left: 3px dotted @white;
+        padding-left: 15px;
+        padding-bottom: 15px;  
+        h2 {
+          font-weight: normal;
+          font-size: 20px; 
+          font-style: bold;
+        }
+        a {
+          text-decoration:none;
+          &:link {
+            color: @white !important;            
+          }      /* unvisited link */
+          &:visited {
+            color: @white !important;            
+          }  /* visited link */  
+          &:hover {
+            color:lighten(@white, 15%) !important;            
+            text-decoration: underline;
+          }  /* mouse over link */
+          &:active {
+            color:lighten(@white, 15%) !important;            
+            text-decoration: underline;
+          }  /* selected link */
+        }
+      }
+    }
+    #government_links {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: none; //@contrast;
+    }    
+  }
+  #rodape2 {
+    padding: 20px 0px 20px 0px;    
+    background-color: @primary1;
+  }   
+}
+
+/*** COURSES ***************************************************/
+
+ul#courses {
+  margin: 0px;
+  padding-top: 0px;  
+  li {
+    margin-top: 2px;
+  }
+}  
+
+/*** NEWSARTICLES *********************************************/
+section.news_title_and_lead {
+  #news_title {
+    margin-bottom: 25px;
+    font-size: 34px;
+    line-height: 37px;
+  }
+  .lead {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+}
+
+section.news_authorship {
+  p { 
+    font-size: 12px;
+  }
+  p.news-published {
+    margin-bottom: 0px;
+  }
+}
+
+div#last_news_box {
+  margin-top: 10px;  
+  border: 1px solid darken(@box-bg-color, 10%);
+  background-color: @box-bg-color;
+  .box, .box-last {
+    padding: 20px;    
+  }
+  .box {
+    border-bottom: 2px solid darken(@box-bg-color, 10%);
+  }
+  .box-last {
+    font-size: 12px;
+    text-align: right;
+    .go-btn {
+      height: 18px;
+      width: 18px;
+      margin-left: 3px;
+    }
+  }
+  h2.box-title {    
+    color: darken(@primary1, 2%);
+    padding: 20px;
+    font-size: 16px;
+    font-weight: normal;   
+    border-bottom: 2px solid darken(@box-bg-color, 10%);    
+  }
+  a {
+      text-decoration:none;
+      &:link {
+        color: @dark-gray !important;          
+      } 
+      &:visited {
+        color: @dark-gray !important;          
+      }  /* visited link */  
+      &:hover {
+        color:darken(@dark-gray, 15%) !important;          
+      }  /* mouse over link */
+      &:active {
+        color:darken(@dark-gray, 15%) !important;          
+      }  /* selected link */
+    }
+}
+
+/*** HOME ******************************************************/
+#home_courses_box {
+  margin-top: 30px;
+}
+
+#home_news {
+  #home_news_highlight div#home_news_box { 
+    div#news_highlight div#home_highlight_image_box {
+      margin-top: 10px;
+      h2.news-headline {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 34px;
+        font-weight: bold;  
+        margin-bottom: 0px;            
+      }
+      h5.news-highlight {
+        margin-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+      }
+    }
+  }  
+}
+#home_news_sidebar { 
+  div#home_news_interaction {
+    a.interaction_link {
+      display: block;
+      margin-bottom: 25px;
+      img.interaction_img {
+        max-width: 220px;
+      }
+    }
+  }
+}
+
+

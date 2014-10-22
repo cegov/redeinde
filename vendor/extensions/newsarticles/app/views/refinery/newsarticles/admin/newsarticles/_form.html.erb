@@ -1,0 +1,66 @@
+<%= form_for [refinery, :newsarticles_admin, @newsarticle] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @newsarticle,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :headline -%>
+    <%= f.text_field :headline -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :lead -%>
+    <%= f.text_field :lead, :class => "input-large" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :byline -%>
+    <%= f.text_field :byline -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :photo -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :photo_id,
+               :image => @newsarticle.photo,
+               :toggle_image_display => false %>
+	
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:story],
+                :object => "newsarticles/newsarticle" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :event_date -%>
+    <%= f.date_select :event_date, {:include_blank => true, :default => nil} -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :is_published -%>
+    <%= f.check_box :is_published, :checked => @newsarticle[:is_published] -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :is_a_highlight -%>
+    <%= f.check_box :is_a_highlight, :checked => @newsarticle[:is_a_highlight] -%>
+  </div>  
+  
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.newsarticles.admin.newsarticles.newsarticle'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @newsarticle.headline) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

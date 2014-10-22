@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      faqs:
+        title: Faqs
+    faqs:
+      admin:
+        faqs:
+          actions:
+            create_new: Nieuwe Faq toevoegen
+            reorder: De volgorde van de Faqs wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Faq-volgorde
+          records:
+            title: Faqs
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Faqs. Druk op 'Nieuwe Faq toevoegen' om de eerste toe te voegen.
+          faq:
+            view_live_html: Deze faq op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze faq
+            delete: Deze faq definitief verwijderen
+      faqs:
+        show:
+          other: Andere Faqs
+  activerecord:
+    attributes:
+      'refinery/faqs/faq':
+        refinery_user_id: Refinery User
+        question: Question
+        answer: Answer
+        is_published: Is Published

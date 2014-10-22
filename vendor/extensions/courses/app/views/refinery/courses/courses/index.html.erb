@@ -1,0 +1,45 @@
+<% content_for :body do %>	
+	<div class="">
+		<div class="">
+			<div class="">
+				<!--	
+				<div class="span3 well sidebar-nav">	
+					<%= render '/refinery/show_newsarticle', :newsarticles => @newsarticles %>
+				</div>
+				-->
+				<div class="">
+				  <h2>Cursos</h2>
+				  	
+				  <!--
+				  <ul id="courses">
+				    <% @courses.each do |course| %>
+				      <li>
+				        <%= link_to course.name, refinery.courses_course_path(course) %>
+				      </li>
+				    <% end %>			   
+				  </ul>
+				  -->
+				  <div class="add-vertical-space">
+					<h4>Capacitação EAD Planejamento Estratégico Municipal e Desenvolvimento Territorial</h4>
+				  </div>			  
+				  <section class="courses-with-images">
+				  	
+				  	<% @courses.each do |course| %>
+				  	  <% if !course.photo_id.blank? and course.is_active? %>
+					   	<div class="span4 course-box">
+					   	  <%= link_to refinery.courses_course_path(course) do %>			        			  	
+					  	  	<%= image_fu(course.photo, "500x500", class: "image-align-left") %>
+					  	  <% end %>					  				        
+					   	</div>
+					  <% end %>
+				   	<% end %>
+				  </section>
+				  <div class="pagination">
+				  	<%= will_paginate(@courses, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+				  </div>			  
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,36 @@
+pt-BR:
+  refinery:
+    plugins:
+      newsarticles:
+        title: Eventos e Notícias
+    newsarticles:
+      admin:
+        newsarticles:
+          actions:
+            create_new: Adicionar novo evento/notícia
+            reorder: Reordenar eventos/notícias
+            reorder_done: Terminar de reordenar eventos/notícias
+          records:
+            title: Eventos e notícias
+            sorry_no_results: Desculpe! Nenhum resultado foi encontrado
+            no_items_yet: Não há eventos/notícias ainda. Clique em "Adicionar novo evento/nótícia para adicionar o primeiro curso" 
+          newsarticle:
+            view_live_html: Ver este evento/notícia <br/><em>(abre em uma nova janela)</em>
+            edit: Editar este artigo
+            delete: Remover o artigo definitivamente
+      newsarticles:
+        show:
+          other: Outros eventos/notícias
+  activerecord:
+    attributes:
+      'refinery/newsarticles/newsarticle':
+        refinery_user_id: Refinery User
+        headline: Título
+        lead: Resumo
+        byline: Autor
+        photo: Foto
+        photo_id: Foto
+        story: História ou descrição
+        event_date: Data (apenas se for um evento)
+        is_published: Publicado?
+        is_a_highlight: É a notícia em destaque?

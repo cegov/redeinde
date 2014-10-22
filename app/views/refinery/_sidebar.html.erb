@@ -1,0 +1,51 @@
+<section>
+	<div id="sidebar_menu_geral">					
+		<div class="colored-box">		
+			<h4>GERAL</h4>											
+		</div>
+		<ul>		
+			<li><a href="/sobre">sobre</a></li>
+			<li><a href="/newsarticles">notícias</a></li>
+			<li><a href="/courses">cursos</a></li>
+			<% 
+			# link_to @sobre.title.downcase, @sobre.url if !@sobre.nil?
+			# link_to "Notícias".downcase, newsarticles_newsarticles_url
+			# link_to "Eventos".downcase, events_newsarticles_newsarticles_url 
+			%>
+		</ul>	
+	</div>
+</section>
+<section>
+	<div id="sidebar_menu_links">					
+		<div class="colored-box">		
+			<h4>LINKS</h4>											
+		</div>
+		<ul>		
+			<li><a href="#">biblioteca digital de des.</a></li>
+			<li><a href="#">app mais brasil</a></li>
+		</ul>
+	</div>
+</section>
+<section>
+	<div id="sidebar_menu_cursos">					
+		<div class="colored-box">		
+			<h4>CURSOS EAD</h4>											
+		</div>
+		<ul>		
+			<% courses.each do |course| %>
+				<li><%= link_to course.name.downcase, refinery.courses_course_path(course) %></li>
+			<% end %>
+		</ul>	
+	</div>
+</section>
+<section>
+	<div id="sidebar_menu_conteudo">					
+		<div class="colored-box">		
+			<h4>INSTRUMENTOS</h4>											
+		</div>
+		<ul>		
+			<li><a href="#">wiki</a></li>
+			<li><a href="#">fórum</a></li>
+		</ul>	
+	</div>
+</section>

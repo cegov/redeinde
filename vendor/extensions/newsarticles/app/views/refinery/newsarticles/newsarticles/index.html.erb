@@ -1,0 +1,34 @@
+<% content_for :body do %>
+	<div class="row-fluid">
+		<div class="">
+			<div class="span8">
+				<div class="">
+				  <h2>Notícias</h2>
+				  <div id="newsarticles">
+				    <% @newsarticles.each do |newsarticle| %>
+				    	<% if newsarticle.is_published? %>
+					      <div class="newsarticle_box">
+					      	<div class="newsarticle_date">
+					      		<%= image_tag "cal_icon.png", alt: "Logo", class:"cal-icon" %>
+					      		<span class="date-small"><%= newsarticle.created_at.strftime("%d/%m/%Y") %> </span>
+					      	</div>
+					      	<div>
+						        <%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>						        	 
+						        	<%= newsarticle.headline %>
+						        <% end %>
+						    </div>
+					      </div><hr />
+					    <% end %>
+				    <% end %>
+				  </div>
+				</div>
+				<%= will_paginate(@news_posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+			</div>
+			<div id="home_news_sidebar" class="span4">
+				<%= render 'refinery/pages/home_news_sidebar' %>
+			</div>			
+		</div>
+	</div>
+<% end %>
+
+<%= render '/refinery/content_page' %>

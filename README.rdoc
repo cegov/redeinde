@@ -1,0 +1,236 @@
+DEADLINES
+
+programar a wiki - Agosto
+programar o fórum - Agosto
+programar a busca - Agosto
+
+---------------------
+
+TO DO
+
+linkar a caixa de notícias e fazer efeito hover nela e não no link
+
+a view notícias podia ter um small hermit div nesse formato:
+" por Brasil — publicado 19/06/2013 15:27, última modificação 23/08/2013 14:01 "
+
+ajustar campo resumo na parte administrativa de newsarticles, ver limite de caracteres (255? 128? um tweet?)
+
+criar um banco pgsql e testar a dump feito no heroku
+
+programar a busca? usar solr?
+
+NOT examinar a função justificar no editor
+
+---------------------
+TO implement / fix / etc
+
+O sistema deve previnir que o usuário manipule URLs para chegar a notícias que não foram publicadas
+Criar relação has_many/belong_to entre os recursos criados e refinery_user
+Consertar bug que mostra diversas entradas para os roles do usuário quando se trata dos recursos criados
+Extender model/controller para sempre mostrar news na barra lateral
+Implementar if/else na view que considera se is_active ou is_published está setado
+Criar migration para renomear campo user_id do model Course para refinery_user_id
+Criar keys na db para agilizar as buscas
+--------------------
+
+DONE:
+OK CMS
+OK default de linguagens é em pt-BR
+OK criar página início com texto qq
+OK criar página sobre com texto qq
+OK fazer sistema para transferência de imagens
+OK fazer sistema para transferência de arquivos
+OK fazer sistema de gerenciamento de usuários e contas
+OK fazer dashboard com mudanças recentes feitas nas páginas do site pelo Gestor de Conteúdo
+
+OK fazer o override das views do CMS para integrar o HTML já criado 
+OK instalar o twitter bootstrap
+OK reescrever o html do header para integrar Twitter bootstrap e Refinery CMS
+OK reescrever o html do footer para integrar Twitter bootstrap e Refinery CMS
+OK transferir imagens para se adequar ao layout 3 do Guia de Estilos de sites do governo
+OK adequar CSS/less com o override do Twitter bootstrap: 
+OK  reescrever o html do body#content para integrar Twitter bootstrap e Refinery CMS
+OK  reescrever o html do body#side_bar para integrar Twitter bootstrap e Refinery CMS
+OK escrever método para colocar os glyphs do font awesome 
+OK achar uma forma de fazer os links das páginas aparecerem automaticamente no menu
+OK mudar a cor de page title, é um link agora, tem que mudar a cor de hover na mixin
+
+TO-DO-LIST: fazer a seção cursos
+OK Create model and database:
+	Model Course
+	name:string
+	user_id:integer
+	is_active:boolean
+	description:text
+	duration_quantity:integer
+	duration_type:string		
+	classes_start_on:date
+	classes_end_on:date
+	created_on:date
+	updated_on:date	
+OK Create a gem to encapsulate the code
+OK Create a rails engine refinery-course
+OK Translate the en.yml file
+OK Create a tab on the menu
+OK Override the layout to show only fields with meaning to the user
+Create model filters to prevent user abuse
+OK FIX: Bootstrap css does not load on Refinery adminarea
+OK FIX: Título do plugin está em inglês
+
+OK Criar eventos e notícias:
+
+TO-DO-LIST: fazer a seção noticias
+OK Create model and database:
+	Model News	
+	refinery_user_id:integer
+	headline:string	
+	lead:string
+	byline:string
+	photo:image	
+	story:text
+	event_date:date
+	is_published:boolean			
+	created_on:date
+	updated_on:date	
+OK Create a gem to encapsulate the code
+OK Create a rails engine refinery-course
+OK Translate the en.yml file
+OK Create a tab on the menu
+OK Override the layout to show only fields with meaning to the user
+
+OK Criar FAQ:
+
+OK TO-DO-LIST: fazer a seção noticias
+OK Create model and database:
+	Model faqs	
+	refinery_user_id:integer
+	question:string	
+	answer:string	
+	is_published:boolean			
+	created_on:date
+	updated_on:date	
+OK Create a gem to encapsulate the code
+OK Create a rails engine refinery-course
+OK Translate the en.yml file
+OK Create a tab on the menu
+OK Override the layout to show only fields with meaning to the user
+OK Editar index, show nas views do dir refinery e editar _form das views de admin
+
+OK: fazer com que as notícias apareçam sempre na barra lateral
+OK extender o controller para pegar as notícias do banco de dados
+OK criar um decorator ao invés de fazer override do controller
+OK Criar before_filters para as engines criadas para pegar os artigos de notícias do db
+OK mover para uma partial o menu lateral
+
+BUGFIXED: ordem dos links na barra de links não pode ser reordenada pela interface :/
+Problema: o cms não guarda position para essas coisas, assim como o faz para a posição dos plugins.
+Ele pega os links através desse método: Refinery::Menu.new(Refinery::Page.menu_pages.reorder('created_at ASC')
+Adicionei o reorder para pelo menos colocar em ordem de criação
+
+BUGFIXED: não é possível editar/deletar páginas criadas
+O problema: 
+View:
+ NoMethodError in Refinery/admin/pages#edit
+ Showing /home/deployer/.rvm/gems/ruby-2.0.0-p451/gems/refinerycms-pages-2.1.2/app/views/refinery/admin/pages/_form.html.erb where line #2 raised:
+ undefined method `persisted?' for nil:NilClass
+
+OK Alto contraste
+OK programar o link de alto contraste
+OK revisar páginas para ver se todas estão funcionando
+OK criar novas páginas e ver se o botão funciona
+OK ver se as páginas dos plugins funcionam com HC
+
+OK traduzir as seeds do banco de dados
+
+OK ajustar a lista de cursos na view de cursos
+
+OK programar o link de acessibilidade: 
+OK copiar essa página: http://www.brasil.gov.br/acessibilidade
+OK programar os atalhos do teclado para que a explicação acima funcione
+OK refatorar a forma como as notícias são pegas, para poder alterar em um ponto o limite do número de artigos
+
+OK criar link no menu acessibilidade no menu:
+
+
+OK tirar fora barra lateral com notícias
+OK ajustar spans para span12 ou sem span
+
+OK fazer layot das index pages de: notícias e cursos
+OK definir uma cor para isso
+OK problema: irá conflitar com as cores de nav-bar? SIM
+
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: curso
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: faq
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: newsarticles
+
+OK criar página de acessibilidade no servidor de testes
+OK fazer upload da página de acessibilidade
+
+OK BUG botão previsualizar não funciona (courses/3)
+
+OK criar campo imagem em notícia
+OK criar image picker em notícia
+OK editar view para mostrar a imagem
+
+OK fazer migration criando campo default false para notícia em destaque
+OK criar toggle no model para que só exista um número máximo de notícias(uma) em destaque
+OK validar model para que só exista uma notícia em destaque
+OK criar checkbox para fazer esse toggle na view
+
+OK tirar logo_subordination
+OK título: portal / ppa municipal
+OK fontes 15px;
+OK line-height: 150% para p
+OK h1-h6: 110%
+OK menu não arredondando, mais espaçamento entre os itens do menu
+
+OK prof responsável em itálico
+OK tirar a palavra descrição
+OK colocar hr após descrição
+
+OK fazer a relação dos recursos dos plugins e a class Refinery_User vide:
+http://refinerycms.com/guides/relating-resources-in-an-extension
+http://refinerycms.com/guides/extending-controllers-with-decorators
+
+OK criar página inicial
+OK usar boxes como do site brasil.gov.br replicando as seções do site
+OK BUG: não devemos pegar highlights entre as 9 notícias selecionadas
+OK tratar nil e blank na página inicial para @highlight e @newsarticles 
+OK tratar highlight sem imagem => não pega se não tiver imagem
+OK tratar tratar nil e blank para @courses
+
+OK criar campo no bd para foto do curso
+OK criar image picker para o curso
+OK editar courses#index para mostrar a imagem
+
+OK tirar obrigatoriedade de se colocar uma data de início e término dos cursos
+OK tirar obrigatoriedade de se colocar uma data de início e término das notícias/eventos
+
+OK tratar campos null e blank nas views show de newsarticles
+OK tratar campos null e blank nas views show de courses
+
+OK usar jquery para esconder as respostas para as perguntas e mostrar on click
+
+OK arrumar a lista de notícias, formatação
+
+OK criado backup do banco de dados do servidor em heroku
+
+OK fazer galeria de vídeos (usar blueimp)
+
+OK BUG HOME: puxar cursos na ordem reversa
+OK BUG HOME: puxar notícias na ordem reversa
+
+OK margin-top 20px no footer
+OK hr apos noticia em destaque
+OK tirar borda da caixa de noticias/etc (flat)
+OK letras menu em bold
+
+OK verificar possível problema com backup de imagens
+
+OK Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, ficarão prontas para o dia 10/4.
+OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
+
+OK header azul (claro / escuro)
+
+OK Criar páginas Cursos, notícias, eventos e FAQ

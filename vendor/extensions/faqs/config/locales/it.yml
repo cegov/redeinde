@@ -1,0 +1,30 @@
+it:
+  refinery:
+    plugins:
+      faqs:
+        title: Faqs
+    faqs:
+      admin:
+        faqs:
+          actions:
+            create_new: Aggiungi Nuovo Faq
+            reorder: Riordina Faqs
+            reorder_done: Termina il Riordino di Faqs
+          records:
+            title: Faqs
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Faqs. Clicca "Aggiungi Nuovo Faq" per aggiungere il tuo primo faq.
+          faq:
+            view_live_html: Guarda live questo faq <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo faq
+            delete: Rimuovi per sempre questo faq
+      faqs:
+        show:
+          other: Altri Faqs
+  activerecord:
+    attributes:
+      'refinery/faqs/faq':
+        refinery_user_id: Refinery User
+        question: Question
+        answer: Answer
+        is_published: Is Published

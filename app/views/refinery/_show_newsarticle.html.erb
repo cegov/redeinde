@@ -1,0 +1,11 @@
+<ul class="nav nav-list">
+	<li class="nav-header">Notícias</li>
+	<% if !newsarticles.blank? %>	
+		<% newsarticles.each do |newsarticle| %>
+			<% if newsarticle.is_published? %>
+				<li><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>
+			<% end %>				
+		<% end %>
+	<% end %>	
+</ul>	
+

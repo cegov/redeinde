@@ -1,0 +1,36 @@
+zh-CN:
+  refinery:
+    plugins:
+      newsarticles:
+        title: Newsarticles
+    newsarticles:
+      admin:
+        newsarticles:
+          actions:
+            create_new: 建立新的 Newsarticle
+            reorder: 对 Newsarticles 重新排序
+            reorder_done: 对 Newsarticles 的重新排序结束
+          records:
+            title: Newsarticles
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Newsarticles yet. Click "Add New Newsarticle" to add your first newsarticle.
+            no_items_yet: 目前没有 Newsarticles . 点击 "Add New Newsarticle" 创建一个newsarticle.
+          newsarticle:
+            view_live_html: 查看 newsarticle 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 newsarticle
+            delete: 永久删除 newsarticle
+      newsarticles:
+        show:
+          other: 其他 Newsarticles
+  activerecord:
+    attributes:
+      'refinery/newsarticles/newsarticle':
+        refinery_user_id: Refinery User
+        headline: Headline
+        lead: Lead
+        byline: Byline
+        photo: Photo
+        story: Story
+        event_date: Event Date
+        is_published: Is Published

@@ -1,0 +1,34 @@
+it:
+  refinery:
+    plugins:
+      newsarticles:
+        title: Newsarticles
+    newsarticles:
+      admin:
+        newsarticles:
+          actions:
+            create_new: Aggiungi Nuovo Newsarticle
+            reorder: Riordina Newsarticles
+            reorder_done: Termina il Riordino di Newsarticles
+          records:
+            title: Newsarticles
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Newsarticles. Clicca "Aggiungi Nuovo Newsarticle" per aggiungere il tuo primo newsarticle.
+          newsarticle:
+            view_live_html: Guarda live questo newsarticle <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo newsarticle
+            delete: Rimuovi per sempre questo newsarticle
+      newsarticles:
+        show:
+          other: Altri Newsarticles
+  activerecord:
+    attributes:
+      'refinery/newsarticles/newsarticle':
+        refinery_user_id: Refinery User
+        headline: Headline
+        lead: Lead
+        byline: Byline
+        photo: Photo
+        story: Story
+        event_date: Event Date
+        is_published: Is Published

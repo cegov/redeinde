@@ -1,0 +1,30 @@
+pt-BR:
+  refinery:
+    plugins:
+      faqs:
+        title: FAQ
+    faqs:
+      admin:
+        faqs:
+          actions:
+            create_new: Adicionar nova pergunta
+            reorder: Reordenar perguntas
+            reorder_done: Terminei de reordenar os cursos
+          records:
+            title: FAQ
+            sorry_no_results: Desculpe! Nenhum resultado foi encontrado
+            no_items_yet: Nenhuma pergunta foi criada ainda. Clique em "Adicionar nova pergunta para adicionar a primeira"
+          faq:
+            view_live_html: Ver esta pergunta no site <br/><em>(abre em uma nova janela)</em>
+            edit: Editar esta pergunta
+            delete: Remover esta pergunta definitivamente
+      faqs:
+        show:
+          other: Outras perguntas
+  activerecord:
+    attributes:
+      'refinery/faqs/faq':
+        refinery_user_id: Usuário
+        question: Pergunta
+        answer: Resposta
+        is_published: Está publicado?
