@@ -184,6 +184,19 @@ ul#home_recent_news li {
     text-transform: uppercase;
   }
 }
+.colored-box.light-green {
+  border-top: 3px solid @primary2;
+  min-height: 40px;
+  background-color: @box-bg-color;
+  h4 {    
+    color: darken(@primary2, 2%);
+    padding-left: 9px;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+}
+
 // for date in newsarticles list on home page 
 
 
@@ -215,7 +228,7 @@ div#newsarticles div.newsarticle_box {
 header {  
   color: @white; 
   background-color: @primary1;
-  #gradient > .vertical(@primary1, @primary2); 
+  #gradient > .vertical( lighten(@primary2, 10%), @primary2); 
   margin-bottom: 55px;
   
   #logo_portal_name {
@@ -255,26 +268,28 @@ header {
   #accessibility_menu {
       padding: 0px 20px 0px 20px;
       margin-bottom: 15px;
+      color: @primary1;
       a {
-        &:link {color: @white;}      /* unvisited link */
-        &:visited {color: @white;}  /* visited link */  
-        &:hover {color:darken(@white, 15%);}  /* mouse over link */
-        &:active {color:darken(@white, 15%);}  /* selected link */
+        &:link {color: @primary1;}      /* unvisited link */
+        &:visited {color: @primary1;}  /* visited link */  
+        &:hover {color:darken(@primary1, 15%);}  /* mouse over link */
+        &:active {color:darken(@primary1, 15%);}  /* selected link */
       }
       background-color: none;
       #links_to_content a {
         font-size: @font-size-small;             
       }
       #accessibility_actions {
+        color: @primary1;
         font-size: @font-size-small;  
         ul {
-          border-bottom: 1px dotted @white;
+          border-bottom: 1px dotted @primary1;
         }      
       }      
   }
   #logo_bar {
       // padding: 10px 40px 10px 40px;    
-      background-color: none;
+      // background-color: none;
       #logo {
         h1, h5, h6 {
           margin: 0px 0px 4px;
@@ -284,6 +299,12 @@ header {
         }
         #logo_subordination {
           font-size: 11px;
+        }
+        a#logo_link {
+          display: block;          
+          img {
+            max-height: 130px;
+          }
         }
       }
       #busca_e_social {
@@ -304,7 +325,7 @@ header {
             height: 30px;
             width: 80px;
             i {
-              color: @white;
+              color: @primary1;
               font-size: 20px;
               // background-color: @contrast;
             }
@@ -392,16 +413,17 @@ footer {
     padding-top: 50px;
     padding-bottom: 50px;
     min-height: 140px;
-    color: @white;
+    color: @primary1;
     background-color: @primary1;
-    #gradient > .vertical(@primary1, @primary2); 
+    #gradient > .vertical( @primary2, lighten(@primary2, 10%)); 
     
     #footer_links {
+      color: @primary1;
       padding-top: 10px;      
       background-color: none;
       div.footer-link-box {
         min-height: 100px;        
-        border-left: 3px dotted @white;
+        border-left: 3px dotted @primary1;
         padding-left: 15px;
         padding-bottom: 15px;  
         h2 {
@@ -412,17 +434,17 @@ footer {
         a {
           text-decoration:none;
           &:link {
-            color: @white !important;            
+            color: @primary1 !important;            
           }      /* unvisited link */
           &:visited {
-            color: @white !important;            
+            color: @primary1 !important;            
           }  /* visited link */  
           &:hover {
-            color:lighten(@white, 15%) !important;            
+            color:lighten(@primary1, 15%) !important;            
             text-decoration: underline;
           }  /* mouse over link */
           &:active {
-            color:lighten(@white, 15%) !important;            
+            color:lighten(@primary1, 15%) !important;            
             text-decoration: underline;
           }  /* selected link */
         }
@@ -451,6 +473,14 @@ ul#courses {
 }  
 
 /*** NEWSARTICLES *********************************************/
+#news_index {
+  h2.page-title {
+    color: @primary1;
+    font-size: 18px;
+    font-weight: normal;
+  }
+}
+
 section.news_title_and_lead {
   #news_title {
     margin-bottom: 25px;

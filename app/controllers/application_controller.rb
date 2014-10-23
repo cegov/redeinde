@@ -14,11 +14,7 @@ class ApplicationController < ActionController::Base
   end
   
   def get_courses
-    @courses = Refinery::Courses::Course
-          .where(:is_active => true)
-          .where("photo_id IS NOT NULL")
-          .order("position ASC")          
-          .limit(MAX_COURSES_AT_HOME_PAGE) 
+    @courses = nil 
   end
   
 end

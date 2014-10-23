@@ -1,9 +1,9 @@
 <% content_for :body do %>
-	<div class="row-fluid">
+	<div id="news_index" class="row-fluid">
 		<div class="">
 			<div class="span8">
 				<div class="">
-				  <h2>Notícias</h2>
+				  <h2 class="page-title">NOTÍCIAS</h2>
 				  <div id="newsarticles">
 				    <% @newsarticles.each do |newsarticle| %>
 				    	<% if newsarticle.is_published? %>

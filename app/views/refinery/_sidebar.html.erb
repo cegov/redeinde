@@ -5,8 +5,7 @@
 		</div>
 		<ul>		
 			<li><a href="/sobre">sobre</a></li>
-			<li><a href="/newsarticles">notícias</a></li>
-			<li><a href="/courses">cursos</a></li>
+			<li><a href="/newsarticles">notícias</a></li>			
 			<% 
 			# link_to @sobre.title.downcase, @sobre.url if !@sobre.nil?
 			# link_to "Notícias".downcase, newsarticles_newsarticles_url
@@ -18,24 +17,12 @@
 <section>
 	<div id="sidebar_menu_links">					
 		<div class="colored-box">		
-			<h4>LINKS</h4>											
+			<h4>FERRAMENTAS INDE</h4>											
 		</div>
 		<ul>		
-			<li><a href="#">biblioteca digital de des.</a></li>
-			<li><a href="#">app mais brasil</a></li>
+			<li><a href="#">visualizador</a></li>
+			<li><a href="#">catálogo de metadados</a></li>
 		</ul>
-	</div>
-</section>
-<section>
-	<div id="sidebar_menu_cursos">					
-		<div class="colored-box">		
-			<h4>CURSOS EAD</h4>											
-		</div>
-		<ul>		
-			<% courses.each do |course| %>
-				<li><%= link_to course.name.downcase, refinery.courses_course_path(course) %></li>
-			<% end %>
-		</ul>	
 	</div>
 </section>
 <section>
