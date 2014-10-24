@@ -1,0 +1,19 @@
+<div id="home_news_box2">			
+	<% if !@last_newsarticles.blank? %>
+		<div class="row-fluid">					
+			<% @last_newsarticles.each do |newsarticle| %>										
+				<div class="span4">
+					<% if !newsarticle.photo_id.blank? %>									
+						<%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>													  	
+							<%= image_fu newsarticle.photo, "400x600" %>
+						<% end %>				  						
+  					<% end %>	  					
+  					<h4 class="news-headline"><%= newsarticle.headline %></h4> 	
+  					<% if !@highlight.lead.blank? %>			  	
+  						<p class="news-highlight"><%= newsarticle.lead %></p>
+  					<% end %>						
+				</div>					
+			<% end %>
+		</div>
+	<% end %>		
+</div>

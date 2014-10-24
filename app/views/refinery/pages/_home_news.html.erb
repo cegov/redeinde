@@ -22,32 +22,7 @@
 		</div>		
 	</div>
 	<div id="home_news_sidebar" class="span4">
-		<div id="home_news_interaction">
-			<%= link_to('#', title: 'Wiki', class: 'interaction_link') do %>
-				<%= image_tag "wiki.png", alt: "Wiki icon", class: "interaction_img" %>
-			<% end %>
-			<%= link_to('#', title: 'Fórum', class: 'interaction_link') do %>
-				<%= image_tag "forum.png", alt: "Forum icon", class: "interaction_img" %>
-			<% end %>
-		</div>
+		<%= render '/refinery/pages/home_news_sidebar' %>
 	</div>
 </div>
-<div id="home_news_box2">			
-	<% if !@last_newsarticles.blank? %>
-		<div class="row-fluid">					
-			<% @last_newsarticles.each do |newsarticle| %>										
-				<div class="span4">
-					<% if !newsarticle.photo_id.blank? %>									
-						<%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>													  	
-							<%= image_fu newsarticle.photo, "400x600" %>
-						<% end %>				  						
-  					<% end %>	  					
-  					<h4 class="news-headline"><%= newsarticle.headline %></h4> 	
-  					<% if !@highlight.lead.blank? %>			  	
-  						<p class="news-highlight"><%= newsarticle.lead %></p>
-  					<% end %>						
-				</div>					
-			<% end %>
-		</div>
-	<% end %>		
-</div>
+<%= render '/refinery/pages/home_news2' %>
