@@ -32,7 +32,7 @@ var BlueImpNewsCarousel = {
 		// hack to allow going to other pages from blueimp pictures
 		$('.slide-content').click(function(){
 			console.log($(this).attr('href'));
-			window.location = $(this).attr('href');
+			window.location.href = $(this).attr('href');
 			return false;
 		});
 	}
