@@ -1,9 +1,9 @@
 require "bundler/capistrano"
 require 'rvm/capistrano'
 
-set :application, "ppagestores"
+set :application, "redeinde"
 
-set :deploy_to, "/var/www/ppagestores"
+set :deploy_to, "/var/www/redeinde"
 set :branch, "master"
 
 # set :repository,  "git@github.com:itsme/#{application}.git"         # não quero usar o github
