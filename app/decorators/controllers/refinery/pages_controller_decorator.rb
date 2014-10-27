@@ -14,10 +14,10 @@ Refinery::PagesController.class_eval do
           .where(:is_published => true)
           .where(:is_a_highlight => true).first
         @news_for_carousel = Refinery::Newsarticles::Newsarticle.last(5).reverse
-        @last_newsarticles = Refinery::Newsarticles::Newsarticle
-          .where(:is_a_highlight => false)
+        @last_newsarticles = Refinery::Newsarticles::Newsarticle          
           .limit(MAX_NEWS_AT_HOME_PAGE)
           .order("created_at DESC")
+          # .where(:is_a_highlight => false) # this is irrelevant now :/
       end
       
       def find_pages_for_sidebar_menu
