@@ -2,22 +2,22 @@
 	<div id="home_news_highlight" class="span8">
 		<div class="colored-box light-green">		
 			<h4>Notícias</h4>	
-		</div>				
-		<div id="home_news_box">
-			<% if !@highlight.blank? %>
-				<div id="news_highlight">					
-					<div id="home_highlight_image_box">
-						<% if !@highlight.photo_id.blank? %>									
-							<%= link_to refinery.newsarticles_newsarticle_path(@highlight) do %>													  	
-								<%= image_fu @highlight.photo, "700x700" %>
-							<% end %>				  						
-	  					<% end %>	  					
-	  					<h2 class="news-headline"><%= @highlight.headline %></h2> 	
-	  					<% if !@highlight.lead.blank? %>			  	
-	  						<h5 class="news-highlight"><%= @highlight.lead %></h5>
-	  					<% end %>						
-					</div>
-				</div>
+		</div>		
+		<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+		<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel blueimp-gallery-controls">
+		    <div class="slides"></div>
+		    <h3 class="title"></h3>
+		    <a class="prev">‹</a>
+		    <a class="next">›</a>
+		    <a class="play-pause"></a>
+		    <ol class="indicator"></ol>
+		</div>
+		
+		<div id="home_news_box" class="hidden">			
+			<% @news_for_carousel.each do |newsarticle| %>
+				<%= link_to newsarticle.photo.url, title: newsarticle.headline, :'data-link' => refinery.newsarticles_newsarticle_url(newsarticle) do %>
+					<%= image_fu newsarticle.photo, "600x600", alt: newsarticle.headline %>
+				<% end %>
 			<% end %>
 		</div>		
 	</div>

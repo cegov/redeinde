@@ -18,6 +18,7 @@
 
 $(document).ready(function() {
 	HighContrast.init();
-	BlueImpPlugin.init();		
+	BlueImpPlugin.init();	
+	BlueImpNewsCarousel.init();	
 });
 
