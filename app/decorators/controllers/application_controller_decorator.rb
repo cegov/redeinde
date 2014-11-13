@@ -6,6 +6,6 @@ ApplicationController.class_eval do
   
   public    
     def find_pages_for_sidebar_menu
-      @sobre = Refinery::Page.find('sobre')        
+      # @sobre = Refinery::Page.find('sobre')        
     end    
 end
