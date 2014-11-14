@@ -9,7 +9,7 @@
 						<% end %>				  						
   					<% end %>	  					
   					<h4 class="news-headline"><%= newsarticle.headline %></h4> 	
-  					<% if !@highlight.lead.blank? %>			  	
+  					<% if !newsarticle.lead.blank? %>			  	
   						<p class="news-highlight"><%= newsarticle.lead %></p>
   					<% end %>						
 				</div>					

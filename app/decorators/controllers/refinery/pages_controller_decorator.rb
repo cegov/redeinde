@@ -12,7 +12,7 @@ Refinery::PagesController.class_eval do
       def find_newsarticles
         @highlight = Refinery::Newsarticles::Newsarticle
           .where(:is_published => true)
-          .where(:is_a_highlight => true).first
+          .where(:is_a_highlight => true).first || Refinery::Newsarticles::Newsarticle.last
         @news_for_carousel = Refinery::Newsarticles::Newsarticle.last(5).reverse
         @last_newsarticles = Refinery::Newsarticles::Newsarticle          
           .limit(MAX_NEWS_AT_HOME_PAGE)
