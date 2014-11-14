@@ -5,7 +5,7 @@
 				<div class="span4">
 					<% if !newsarticle.photo_id.blank? %>									
 						<%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>													  	
-							<%= image_fu newsarticle.photo, "400x600" %>
+							<%= image_fu newsarticle.photo, "600x400#" %>
 						<% end %>				  						
   					<% end %>	  					
   					<h4 class="news-headline"><%= newsarticle.headline %></h4> 	
