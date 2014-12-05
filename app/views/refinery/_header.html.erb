@@ -23,7 +23,10 @@
 					<% accessibility_page = Refinery::Page.find_by_slug('acessibilidade') %>			  
 					<%= link_to accessibility_page.title.upcase, refinery.url_for(accessibility_page), :id => "accessibility-tgt" if !accessibility_page.blank? %> |
 					<a href="#" id="high-contrast-tgt">ALTO CONTRASTE</a> | 
-					<a href="#">MAPA DO SITE</a>
+					<a href="#">MAPA DO SITE</a> 
+					<% if !refinery_user_signed_in? %> | 						
+						<%= link_to("ENTRAR", login_path) %> 
+					<% end %>
 				</ul>
 			</div>
 		</div>
