@@ -17,7 +17,7 @@
 			</div>
 						
 			<div class="span9">				
-				<%=raw @page.content_for(:body) %>	
+				<%=raw @page.content_for(:body) if !@page.blank? %>	
 				<%= yield :body %>
 			</div>
 		</div>

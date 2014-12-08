@@ -1,5 +1,7 @@
 PpaGestores::Application.routes.draw do
-  #scope '/myapp' do
+  #scope '/myapp' do    
+    get '/sitemap', to: 'application#get_sitemap', :as => "sitemap"
+    
     # This line mounts Refinery's routes at the root of your application.
     # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.
     # If you would like to change where this extension is mounted, simply change the :at option to something different.
@@ -7,8 +9,8 @@ PpaGestores::Application.routes.draw do
     # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
     mount Refinery::Core::Engine, :at => '/'
     root :to => 'pages#home'
-    
-    post '/HVeuYIV2hRt6ShqGDMH32jOneJOeRU7/verify', :to => 'application#verify_user'
+        
+    post '/HVeuYIV2hRt6ShqGDMH32jOneJOeRU7/verify', :to => 'application#verify_user'    
   
     # The priority is based upon order of creation:
     # first created -> highest priority.

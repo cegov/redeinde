@@ -25,6 +25,10 @@ module Refinery
         Refinery::Newsarticles::Newsarticle.where(:is_a_highlight => true).size
       end
       
+      def self.get_published
+        Refinery::Newsarticles::Newsarticle.where(is_published: true)
+      end
+      
       private
         #validations
         def one_highlight_only
