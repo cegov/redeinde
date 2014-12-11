@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery except: :verify_user  
-  
+  before_filter :find_pages_for_sidebar_menu
+   
   def verify_user
     username = params['refinery_user']['username']
     password = params['refinery_user']['password']
@@ -23,5 +24,10 @@ class ApplicationController < ActionController::Base
       format.xml { render "sitemap/index.xml" }
     end        
   end
+  
+  protected
+    def find_pages_for_sidebar_menu
+      @pages_for_sidebar = Refinery::Page.where(show_in_sidebar: true)        
+    end
   
 end

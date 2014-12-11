@@ -6,11 +6,10 @@
 		<ul>		
 			<li><a href="/sobre">sobre</a></li>
 			<li><a href="/newsarticles">notícias</a></li>			
-			<% 
-			# link_to @sobre.title.downcase, @sobre.url if !@sobre.nil?
-			# link_to "Notícias".downcase, newsarticles_newsarticles_url
-			# link_to "Eventos".downcase, events_newsarticles_newsarticles_url 
-			%>
+			<% @pages_for_sidebar.each do |page| %>
+				<li><%= link_to page.title.downcase, page.slug %></li>
+			<% end %>
+			
 		</ul>	
 	</div>
 </section>
@@ -21,7 +20,7 @@
 		</div>
 		<ul>		
 			<li><a href="http://www.visualizador.inde.gov.br" target="_blank">visualizador</a></li>
-			<li><a href="http://www.metadados.inde.gov.br" target="_blank">catálogo de metadados</a></li>
+			<li><a href="http://www.metadados.inde.gov.br" target="_blank">catálogo de metadados</a></li>			
 		</ul>
 	</div>
 </section>

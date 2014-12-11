@@ -1,14 +1,12 @@
 Refinery::PagesController.class_eval do
   
     before_filter :find_newsarticles, :only => "home"
-    # before_filter :find_courses, :only => "home"
-    before_filter :find_pages_for_sidebar_menu
+    # before_filter :find_courses, :only => "home"    
     
     MAX_NEWS_AT_HOME_PAGE = 3
     MAX_COURSES_AT_HOME_PAGE = 3
-         
+          
     protected
-    
       def find_newsarticles
         @highlight = Refinery::Newsarticles::Newsarticle
           .where(:is_published => true)
@@ -20,7 +18,5 @@ Refinery::PagesController.class_eval do
           # .where(:is_a_highlight => false) # this is irrelevant now :/
       end
       
-      def find_pages_for_sidebar_menu
-        # @sobre = Refinery::Page.find('sobre')        
-      end
+      
 end
