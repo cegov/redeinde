@@ -17,7 +17,8 @@ set :deploy_via, :copy                          # a ideia é não usar um host r
 set :copy_cache, true                         # tentativa de otimizar o deploy
 set :copy_exclude, [".git", "private/*", "log/*", ".bundle", "tmp/*", "spec", "test"] 
 
-server "189.9.150.184", :web, :app, :db, primary: true
+# server "189.9.150.184", :web, :app, :db, primary: true
+server "devredeinde.planejamento.gov.br", :web, :app, :db, primary: true
 set :port, 22
 
 set :user, "inde"
