@@ -3,12 +3,10 @@
 		<div class="colored-box">		
 			<h4>GERAL</h4>											
 		</div>
-		<ul>		
-			<li><a href="/sobre">sobre</a></li>
-			<li><a href="/newsarticles">notícias</a></li>			
+		<ul>			
 			<% @pages_for_sidebar.each do |page| %>
 				<li><%= link_to page.title.downcase, page.slug %></li>
-			<% end %>			
+			<% end %>
 		</ul>	
 	</div>
 </section>

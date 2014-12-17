@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery except: :verify_user  
-  before_filter :find_pages_for_sidebar_menu
+  before_filter :find_pages_for_sidebar
    
   def verify_user
     username = params['refinery_user']['username']
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
   
   protected
-    def find_pages_for_sidebar_menu
+    def find_pages_for_sidebar
       @pages_for_sidebar = Refinery::Page.where(show_in_sidebar: true)        
     end
   
