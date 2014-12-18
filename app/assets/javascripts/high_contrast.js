@@ -10,7 +10,8 @@ var HighContrast = {
 		// HIGH CONTRAST MODE
 		backgroundTargets: ['header', '#accessibility_menu', "#logo_bar", 
 			"#page .sidebar-nav", "#nav_services .navbar-inner", "body", 
-			"footer", "footer #government_links", "footer #footer_links"
+			"footer", "footer #government_links", "footer #footer_links", "#rodape",
+			"#rodape2"
 		]
 		/**********************************************************************/
 	}, 

@@ -70,6 +70,11 @@ div.slides div.slide img {
   background-image: none !important;    
   background-color: #000 !important;  
   color: #fff !important;
+  header #accessibility_menu #accessibility_actions ul {
+    color: @white !important;
+    border-bottom: 1px dotted @white;
+  }
+  
   div#nav_services.navbar div.navbar-inner {
     border-left: none;
     border-right: none;
@@ -77,6 +82,8 @@ div.slides div.slide img {
   }
   a {
     text-decoration:none;
+    color: @white !important;
+    background-color: @black !important;
     &:link {
       color: @white !important;
       background-color: @black !important;
@@ -95,7 +102,10 @@ div.slides div.slide img {
     }  /* selected link */
   }
   footer {
-    border-top: thin solid @white;
+    border-top: thin solid @white !important;
+    .footer-link-box{
+      border-left: 3px dotted @white !important;
+    }
   }
 }
 
@@ -442,17 +452,17 @@ footer {
         a {
           text-decoration:none;
           &:link {
-            color: @primary1 !important;            
+            color: @primary1;            
           }      /* unvisited link */
           &:visited {
-            color: @primary1 !important;            
+            color: @primary1;            
           }  /* visited link */  
           &:hover {
-            color:lighten(@primary1, 15%) !important;            
+            color:lighten(@primary1, 15%);            
             text-decoration: underline;
           }  /* mouse over link */
           &:active {
-            color:lighten(@primary1, 15%) !important;            
+            color:lighten(@primary1, 15%);            
             text-decoration: underline;
           }  /* selected link */
         }
