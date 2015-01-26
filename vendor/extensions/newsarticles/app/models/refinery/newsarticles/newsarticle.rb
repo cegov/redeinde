@@ -14,6 +14,17 @@ module Refinery
       after_validation :one_highlight_only
       after_save :check_hightlights_limit
       
+      # DONT FORGET TO REINDEX IF CHANGED! :  Refinery::Newsarticles::Newsarticle.reindex
+      searchable do
+        text :headline, :lead, :story
+      end
+      
+      def self.fulltext_search query_string
+        Refinery::Newsarticles::Newsarticle.search do
+          fulltext query_string          
+        end
+      end
+      
       belongs_to :photo, :class_name => '::Refinery::Image'
       
       def self.get_pages_in_menu

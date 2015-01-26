@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     end
   end  
   
+  # STATIC PAGES ################################################################################
   def get_sitemap
     # @page = ::Refinery::Page.where(:link_url => "/newsarticles").first # gambiarra para definir o template usado
     @newsarticles = Refinery::Newsarticles::Newsarticle.where(is_published: true).last(30)
@@ -23,7 +24,21 @@ class ApplicationController < ActionController::Base
       }
       format.xml { render "sitemap/index.xml" }
     end        
+  end  
+  
+  def search_site
+    @query_string = params['q']
+    @searched_pages = Refinery::Page.fulltext_search(@query_string).results    
+    @searched_newsarticles = Refinery::Newsarticles::Newsarticle.fulltext_search(@query_string).results
+    respond_to do |format|
+      format.html {       
+        render "refinery/search", layout: true
+      }
+      # format.xml { render "sitemap/index.xml" }
+    end        
   end
+  
+  ################################################################################################
   
   protected
     def find_pages_for_sidebar

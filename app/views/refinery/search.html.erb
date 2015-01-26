@@ -1,0 +1,34 @@
+<% content_for :body do %>
+<div id="search_site">
+	<div class="colored-box">
+		<h4>Busca</h4>		
+	</div>
+	<p>Termos pesquisados por você: <b>&ldquo;<%= @query_string %>&rdquo;</b></p>
+	<% if !@searched_pages.blank? or !@searched_newsarticles.blank? %>
+		<% if !@searched_pages.blank? %>
+			<section class="add-vertical-space" id="general_pages">
+				<h4>Resultados em páginas gerais:</h4>
+				<ul>
+					<% @searched_pages.each do |page| %>
+						<li><%= link_to page.title, page.slug %></li>
+					<% end %>
+				</ul>
+			</section>
+		<% end %>
+		<% if !@searched_newsarticles.blank? %>
+			<section class="add-vertical-space" id="newsarticles">
+				<h4>Resultados em notícias:</h4>
+				<ul>
+					<% @searched_newsarticles.each do |newsarticle| %>
+						<li><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>
+					<% end %>
+				</ul>
+			</section>
+		<% end %>		
+	<% else %>
+		<p>Nenhum resultado encontrado</p>
+	<% end %>
+</div>
+<% end %>
+
+<%= render '/refinery/content_page' %>

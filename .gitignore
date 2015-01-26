@@ -12,6 +12,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+/log/*.log.*
 /tmp
 # Rails
 .bundle
@@ -20,6 +21,14 @@ db/*.sqlite3-journal
 *.log
 tmp
 tmp/**/*
+
+# for solr to work
+solr/data
+solr/test
+solr/development
+solr/default/data
+/log/*.log.lck
+solr/pids
 
 # Documentation
 doc/api

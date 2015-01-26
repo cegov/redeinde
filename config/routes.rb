@@ -1,6 +1,7 @@
 PpaGestores::Application.routes.draw do
   #scope '/myapp' do    
     get '/sitemap', to: 'application#get_sitemap', :as => "sitemap"
+    get '/search_site', to: 'application#search_site', :as => 'search_site'    
     
     # This line mounts Refinery's routes at the root of your application.
     # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.
