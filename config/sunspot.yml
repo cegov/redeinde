@@ -1,9 +1,10 @@
 production:
   solr:
-    hostname: localhost
+    # hostname: localhost
     # port: 8983
-    port: 8080
-    log_level: WARNING
+    hostname: devredeinde.planejamento.gov.br
+    port: 80
+    log_level: INFO
     solr_home: solr
     path: /solr/production
 development:
