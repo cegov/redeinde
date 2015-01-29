@@ -4,7 +4,8 @@ production:
     port: 8983    
     log_level: WARNING
     solr_home: solr
-    path: /solr/production
+    # path: /solr/production
+    path: /solr/collection1
 development:
   solr:
     hostname: localhost
