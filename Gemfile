@@ -21,12 +21,12 @@ gem 'fog'
 
 # solr fulltext search
 gem 'sunspot_rails', '~> 1.3.0'  
-gem 'sunspot_solr'
 
 group :development, :test do
   gem 'thin'
   # gem 'sqlite3'
   gem 'mysql2'  
+  gem 'sunspot_solr'
 end
 
 group :production do  
