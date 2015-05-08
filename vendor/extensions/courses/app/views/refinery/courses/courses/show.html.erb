@@ -1,0 +1,59 @@
+<% content_for :body do %>	
+	<div class=""> <!-- not-so-fluid container-fluid row-fluid -->
+		<div class="">
+			<div class="">
+				<!-- 
+				<div class="span3 well sidebar-nav">	
+					<ul class="nav nav-list">			
+						<li class="nav-header">Cursos oferecidos:</li>
+						<% @courses.each do |course| %>
+							<li><%= link_to course.name, refinery.courses_course_path(course) %></li>
+						<% end %>  
+					</ul>
+				</div>
+				-->			
+				<div class="">	
+				  <h2><%=raw @course.name %></h2>
+				  <% if !@course.teacher_name.blank? %>
+					  <section>    
+					  	<p><i>Professor responsável: <%=raw @course.teacher_name %></i></p>
+					  </section>
+				  <% end %>
+				  <% if !@course.description.blank? %>
+					  <section>				  	
+					  	<div>
+						    <p>
+						      <%=raw @course.description %>
+						    </p>
+						</div>
+					  </section>
+				  <% end %>	   
+				  <hr />
+				  <% if !@course.classes_start_on.blank? or !@course.classes_end_on.blank? %>
+					  <section> 
+					  	<h4>Quando será o curso?</h4>
+					  	<% if (!@course.classes_start_on.blank? and !@course.classes_end_on.blank?) and 
+					  		  (@course.classes_start_on != @course.classes_end_on) 
+					  	%>    
+					    	<p>De <%=raw @course.classes_start_on.strftime("%d/%m/%Y") %> a <%=raw @course.classes_end_on.strftime("%d/%m/%Y") %></p>
+					    <% elsif (!@course.classes_start_on.blank?) or  
+					    		 (@course.classes_start_on == @course.classes_end_on)
+					    %>
+					    	<p>Início das aulas: <%=raw @course.classes_start_on.strftime("%d/%m/%Y") %></p>
+					    <% elsif !@course.classes_end_on.blank? %>
+					    	<p>Término das aulas: <%=raw @course.classes_end_on.strftime("%d/%m/%Y") %></p>
+					    <% end %>
+					  </section>
+				   <% end %>
+				   <% if !@course.duration.blank? %>
+					  <section>
+					    <h4>Duração do curso:</h4>
+					    <p><%=raw @course.duration %></p>
+					  </section>
+				   <% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
+<%= render '/refinery/content_page' %>

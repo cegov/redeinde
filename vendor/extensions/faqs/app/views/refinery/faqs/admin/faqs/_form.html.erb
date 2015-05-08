@@ -1,0 +1,29 @@
+<%= form_for [refinery, :faqs_admin, @faq] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @faq,
+              :include_object_name => true %>
+
+
+  <div class='field'>
+    <%= f.label :question -%>
+    <%= f.text_field :question -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:answer],
+                :object => "faqs/faq" -%>
+  </div>
+  
+
+  <div class='field'>
+    <%= f.label :is_published -%>
+    <%= f.check_box :is_published, :checked => @faq[:is_published] -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.faqs.admin.faqs.faq'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @faq.question) -%>
+<% end -%>
