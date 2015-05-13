@@ -21,6 +21,7 @@ module Refinery
         :position, :photo_id
 
       validates :name, :presence => true, :uniqueness => true
+      validates :photo, :presence => true
     end
   end
 end

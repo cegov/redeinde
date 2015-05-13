@@ -18,12 +18,8 @@
 				      </li>
 				    <% end %>			   
 				  </ul>
-				  -->
-				  <div class="add-vertical-space">
-					<h4>Capacitação EAD Planejamento Estratégico Municipal e Desenvolvimento Territorial</h4>
-				  </div>			  
-				  <section class="courses-with-images">
-				  	
+				  -->				  			  
+				  <section class="courses-with-images">				  	
 				  	<% @courses.each do |course| %>
 				  	  <% if !course.photo_id.blank? and course.is_active? %>
 					   	<div class="span4 course-box">
