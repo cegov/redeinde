@@ -1,7 +1,7 @@
 Refinery::PagesController.class_eval do
   
     before_filter :find_newsarticles, :only => "home"
-    # before_filter :find_courses, :only => "home"    
+    before_filter :find_courses, :only => "home"  
     
     MAX_NEWS_AT_HOME_PAGE = 3
     MAX_COURSES_AT_HOME_PAGE = 3
@@ -16,7 +16,12 @@ Refinery::PagesController.class_eval do
           .limit(MAX_NEWS_AT_HOME_PAGE)
           .order("created_at DESC")
           # .where(:is_a_highlight => false) # this is irrelevant now :/
+      end      
+      def find_courses
+        @courses = Refinery::Courses::Course
+          .where(:is_active => true)
+          .where("photo_id IS NOT NULL")
+          .order("position ASC")          
+          .limit(MAX_COURSES_AT_HOME_PAGE)
       end
-      
-      
 end

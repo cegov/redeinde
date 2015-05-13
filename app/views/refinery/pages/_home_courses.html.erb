@@ -1,0 +1,22 @@
+<% if !@courses.nil? %>
+	<div id="home_courses" class="">
+		<div class="colored-box">
+			<h4>Cursos</h4>
+		</div>
+		<div id="home_courses_box">						
+			<div id="home_active_courses">
+				<div class="row-fluid">				
+					<% @courses.each do |course| %>										
+				  		<% if !course.photo_id.blank? and course.is_active? %>
+						   	<div class="course-box span4">
+						   	 	<%= link_to refinery.courses_course_path(course) do %>			        			  	
+						  	  		<%= image_fu(course.photo, "500x400#", class: "image-align-left") %>
+						  	 	<% end %>
+						   	</div>
+						<% end %>
+				   	<% end %>					
+				</div>
+			</div>
+		</div>
+	</div>	
+<% end %>
