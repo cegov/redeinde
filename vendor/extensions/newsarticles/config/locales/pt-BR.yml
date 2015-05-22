@@ -13,7 +13,7 @@ pt-BR:
           records:
             title: Eventos e notícias
             sorry_no_results: Desculpe! Nenhum resultado foi encontrado
-            no_items_yet: Não há eventos/notícias ainda. Clique em "Adicionar novo evento/nótícia para adicionar o primeiro curso" 
+            no_items_yet: Não há eventos/notícias ainda. Clique em "Adicionar novo evento/nótícia para adicionar a primeiro notícia" 
           newsarticle:
             view_live_html: Ver este evento/notícia <br/><em>(abre em uma nova janela)</em>
             edit: Editar este artigo
